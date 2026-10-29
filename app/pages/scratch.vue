@@ -20,6 +20,8 @@ onMounted(async () => {
 
   const blog = buildBlog('UK fintech companies', rows, columns, roles, fallbackCopy(stats, roles, 'UK fintech companies'), 'fallback')
   console.log(blog.slug, blog.stats.rowCount, Object.keys(blog))
+    await $fetch('/api/blogs', { method: 'POST', body: blog })
+  console.log(await $fetch('/api/blogs/uk-fintech-companies'))
 })
 </script>
 

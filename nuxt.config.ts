@@ -8,4 +8,9 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  nitro: {
+  storage: {
+    blogs: { driver: 'fs', base: './server/data/blogs' }
+  }
+}
 })
