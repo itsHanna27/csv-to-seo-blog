@@ -1,6 +1,6 @@
 # CSV to SEO Blog
 
-Upload a ranked CSV and get a server-rendered, SEO-optimised blog page, with no manual rewriting and no rebuilding. Built with Nuxt 4 for the Beauhurst technical assessment.
+Upload a ranked CSV and get a server-rendered, SEO-optimised blog page, with no manual rewriting and no rebuilding. Built with Nuxt 4.
 
 The fintech dataset is just a sample. Nothing in the code or template is hardcoded for fintech, so a healthtech, cleantech or AI CSV works the same way.
 
