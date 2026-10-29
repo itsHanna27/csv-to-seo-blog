@@ -1,5 +1,7 @@
-import { getCurrencySymbol } from './formatValue'
-// app/utils/computeStats.js
+import { getCurrencySymbol } from './formatValue.js'
+import { isEmpty, cleanNumber } from './detectColumns.js'
+
+// shared/utils/computeStats.js
 // Turns rows + detected columns into a plain stats object.
 // All the maths happens here, in code, so the LLM never has to calculate anything.
 // Nothing in here knows about fintech: every label and number comes from the data.
@@ -54,7 +56,7 @@ function valueStats(rows, valueColumn, nameColumn) {
   const firstRaw = rows.map(row => row[valueColumn]).find(v => !isEmpty(v))
   return {
     column: valueColumn,
-        symbol: getCurrencySymbol(firstRaw),
+    symbol: getCurrencySymbol(firstRaw),
     count: sorted.length,
     total,
     mean: total / sorted.length,

@@ -1,3 +1,4 @@
+import { computeStats } from './computeStats.js'
 // Builds the one JSON object that gets saved and served for a blog.
 // Stores finished results only, so the blog page never recomputes anything.
 

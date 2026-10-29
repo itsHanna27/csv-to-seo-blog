@@ -1,5 +1,8 @@
 <script setup>
+
 import Papa from 'papaparse'
+
+const status = ref('Running...')
 
 onMounted(async () => {
   const text = await $fetch('/samples/fintech.csv', { responseType: 'text' })
@@ -20,11 +23,22 @@ onMounted(async () => {
 
   const blog = buildBlog('UK fintech companies', rows, columns, roles, fallbackCopy(stats, roles, 'UK fintech companies'), 'fallback')
   console.log(blog.slug, blog.stats.rowCount, Object.keys(blog))
-    await $fetch('/api/blogs', { method: 'POST', body: blog })
-  console.log(await $fetch('/api/blogs/uk-fintech-companies'))
+
+  status.value = 'Calling /api/generate...'
+  try {
+    const res = await $fetch('/api/generate', { method: 'POST', body: { topic: 'UK fintech companies', rows, columns, roles } })
+    console.log('generate:', res)
+    status.value = 'DONE: ' + JSON.stringify(res)
+   } catch (err) {
+    console.error('GENERATE BROKE:', err)
+    status.value = 'BROKE: ' + (err.data?.message || err.statusMessage || err.message)
+  }
 })
 </script>
 
 <template>
-  <div class="p-8">Open the browser console (F12)</div>
+  <div class="p-8">
+    <p>Open the browser console (F12)</p>
+    <p class="mt-4 font-mono text-lg">{{ status }}</p>
+  </div>
 </template>

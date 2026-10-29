@@ -1,4 +1,5 @@
-import { formatValue } from './formatValue'
+import { formatValue } from './formatValue.js'
+
 // Safety net if Gemini dies mid-demo.
 // Everything comes from stats / roles / topic, nothing industry-specific typed in here.
 export function fallbackCopy(stats, roles, topic) {
@@ -40,7 +41,7 @@ export function fallbackCopy(stats, roles, topic) {
   // ---- intro (2-3 sentences, skip anything with missing data) ----
   const sentences = [
     `This list ranks ${n} ${topic}${valueColumn ? ` by ${lc(valueColumn)}` : ''}.`,
-        total ? `Together they total ${total}.` : null,
+    total ? `Together they total ${total}.` : null,
     leader
       ? `${leader} is ranked first${leaderValue ? ` at ${leaderValue}` : ''}${median ? `, while the median is ${median}` : ''}.`
       : median
