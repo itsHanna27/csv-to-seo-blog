@@ -1,6 +1,6 @@
 import { formatValue } from './formatValue.js'
 
-// Safety net if Gemini dies mid-demo.
+// Safety net 
 // Everything comes from stats / roles / topic, nothing industry-specific typed in here.
 export function fallbackCopy(stats, roles, topic) {
   const n = stats.rowCount
