@@ -97,8 +97,3 @@ public/
 - Category shares are out of the non-empty values in that column, which can be fewer than the total rows.
 - Multi-value columns (like Industries) count each tag once per company, so shares can add up to more than 100%. They are written as "98% list X", never as a split.
 
-## Limitations and next steps
-
-- Blogs are saved to the local filesystem, so deploying to Vercel or Netlify would need a KV storage driver.
-- No authentication on `/generate`, and re-using a topic overwrites the existing blog.
-- Charts and richer insights could be added.
