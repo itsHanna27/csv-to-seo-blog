@@ -17,7 +17,7 @@ const error = ref('')
 const typeIcons = {
   date: 'fa-calendar',
   number: 'fa-hashtag',
-  currency: 'fa-sterling-sign',
+  currency: 'fa-coins',
   multi: 'fa-tags',
   category: 'fa-layer-group',
   text: 'fa-align-left',

@@ -88,13 +88,13 @@ function formatDate(iso) {
 
           <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500">
             <span><i class="fa-solid fa-list-ol mr-1"></i>{{ blog.rowCount }} rows</span>
-            <span v-if="blog.total !== null">
-              <i class="fa-solid fa-coins mr-1"></i>{{ formatValue(blog.total, blog.symbol) }}
-            </span>
+           <span v-if="blog.total !== null">
+  <i class="fa-solid fa-chart-simple mr-1"></i>{{ formatValue(blog.total, blog.symbol) }}
+</span>
             <span><i class="fa-regular fa-calendar mr-1"></i>{{ formatDate(blog.createdAt) }}</span>
-            <span v-if="blog.copySource === 'gemini'" class="text-indigo-600">
-              <i class="fa-solid fa-robot mr-1"></i>AI copy
-            </span>
+           <span v-if="blog.copySource === 'gemini'" class="text-indigo-600">
+  <i class="fa-solid fa-robot mr-1"></i>Written by Gemini
+</span>
           </div>
         </NuxtLink>
       </div>

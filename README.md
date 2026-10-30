@@ -60,21 +60,27 @@ If no key is set, the app still works and uses the fallback copy.
 
 ```
 app/
+  app.vue                  navbar and page wrapper
+  assets/main.css          Tailwind import
   pages/
-    index.vue          landing page
-    generate.vue       upload, confirm and generate
-    blog/[slug].vue    the shared blog template
-shared/utils/          code used by both the browser and the server
-  detectColumns.js     column type detection and role suggestions
-  computeStats.js      all the numbers
-  formatValue.js       currency symbol and £622.3m-style formatting
-  fallbackCopy.js      code-written copy, used when Gemini fails
-  buildBlog.js         builds the JSON object that gets saved
+    index.vue              landing page and list of recent blogs
+    generate.vue           upload, confirm columns and generate
+    blog/[slug].vue        the shared blog template
+shared/utils/              code used by both the browser and the server
+  detectColumns.js         column type detection and role suggestions
+  computeStats.js          all the numbers
+  formatValue.js           currency symbol and £622.3m-style formatting
+  fallbackCopy.js          code-written copy, used when Gemini fails
+  buildBlog.js             builds the JSON object that gets saved
 server/
-  api/generate.post.js   stats, Gemini call, validation, fallback, save
-  api/blogs/             read and save blogs
-  data/blogs/            saved blog JSON (gitignored)
-public/samples/fintech.csv
+  api/generate.post.js     stats, Gemini call, validation, fallback, save
+  api/blogs/index.get.js   list all blogs
+  api/blogs/index.post.js  save a blog
+  api/blogs/[slug].get.js  read one blog
+  data/blogs/              saved blog JSON (gitignored)
+public/
+  samples/fintech.csv      sample dataset
+  robots.txt
 ```
 
 ## Design decisions
