@@ -35,7 +35,7 @@ The fintech dataset is just a sample. Nothing in the code or template is hardcod
 ## Setup
 
 ```bash
-git clone <repo-url>
+git clone <git clone https://github.com/itsHanna27/csv-to-seo-blog.git>
 cd csv-to-seo-blog
 npm install
 ```
